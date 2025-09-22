@@ -1,5 +1,5 @@
 ## Introduction
-Orb-v3 <sup>1,2</sup> is a next-generation universal machine learning interatomic potential (MLIP) developed by Orbital Materials, achieving significant breakthroughs on the Pareto frontier of performance-speed-memory trade-offs. This model series includes multiple variants covering different configurations from high-precision conservative types to high-efficiency sparse graph non-conservative types, making it suitable for a wide range of computational chemistry tasks.
+Orb-v3 <sup>1,2</sup> is a next-generation universal machine learning interatomic potential (MLIP) developed by Orbital Materials, achieving significant breakthroughs on the Pareto frontier of performance-speed-memory trade-offs. This model series includes multiple variants covering different configurations from high-precision conservative types to high-efficiency sparse graph non-conservative types, making it suitable for a wide range of computational chemistry tasks.scan.py --xyz crest_ensemble.xyz --energy crest.energies --sdf crest_ensemble.sdf
 
 The scripts are built upon the Orb-V3 force field model.
 
@@ -41,6 +41,24 @@ crest_xyz_energy_merge.py --xyz crest_ensemble.xyz --energy crest.energies --sdf
 ```
 
 <p>The newly generated SDF conformation ensemble file (crest_ensemble.sdf) contains two tags: Energy and Relative_energy, both calculated based on Orb V3.</p>
+
+## Torsion scan tutorial
+<p>scan.py is a script that uses the Orb V3 force field to scan specified dihedral angles at a specific step size, requiring that the starting conformation be optimized.</p>
+
+```bash
+python scan.py \
+  --input_file opt.xyz \
+  --output_xyz scan_traj.xyz \
+  --output_csv scan_energies.csv \
+  --charge 0.0 \
+  --spin 1.0 \
+  --dihedral_indices 2 3 4 12 \
+  --start_angle -180 \
+  --end_angle 180 \
+  --step 5
+```
+
+<p>It should be noted that, at certain dihedral angles, the constraint may fail to maintain the target dihedral angle during geometry optimization (for example, when the molecular structure is "stretched" too severely, leading to numerical instability), causing an exception to be raised and interrupting the entire scan. As a result, the geometry optimization for that dihedral angle fails to converge and does not appear in the final output.</p>
 
 ## Reference
 <ol>

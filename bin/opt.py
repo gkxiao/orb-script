@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Optimize molecular geometry with optional dihedral angle constraint using ORB-Mol (ORB v3 force field).
+Optimize molecular geometry with optional dihedral angle constraint using ORB v3 force field.
 
 Version: 0.14
 Purpose:
     - Read a molecule from XYZ file.
     - Optionally apply dihedral constraint (if --dihedral_indices provided).
     - If --dihedral_angle is not provided but indices are, use current dihedral angle as target.
-    - Optimize geometry using ASE + ORB-Mol force field.
+    - Optimize geometry using ASE + ORB V3 force field.
     - Output optimized structure with relevant info in comment line:
         - With constraint: dihedral, actual_angle, energy, charge, spin, constraint_source
         - Without constraint: energy, charge, spin

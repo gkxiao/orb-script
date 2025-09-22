@@ -8,8 +8,11 @@ The scripts are built upon the Orb-V3 force field model.
 <p style="text-align:center;">Figure 1. Example molecule. Highlighted dihedral: 2-3-4-12 (1-based indices)</p>
 
 <p>The test molecule (Figure 1) is the ligand extracted from the BTK co-crystal structure PDB 4ZLZ. Its dihedral angle 2-3-4-12 is rotated from the bioactive conformation of -73.8° to -139.1°.</p>
-- lig_twisted.xyz: dihedral angle 2-3-4-12 = -139.1°
-- lig_xtal.xyz: dihedral angle 2-3-4-12 = -73.8°
+<ul>
+<li>lig_twisted.xyz: dihedral angle 2-3-4-12 = -139.1°</li>
+<li>lig_xtal.xyz: dihedral angle 2-3-4-12 = -73.8°</li>
+</ul>
+
 ## Tutorial
 ➤ regular optimization：
 ```bash

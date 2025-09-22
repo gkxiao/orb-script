@@ -34,6 +34,12 @@ using energy windows = 10 kcal/mol and RMSD threshold = 0.125 Å to remove dupli
 cluster.py confs.sdf --charge 0
 ```
 <p>where the parameter charge refers to the net formal charge of the molecule.</p>
+<p>After clustering, three directories are generated, where 3_cluster contains the clustering results. crest.energies provides the relative energies (Orb V3) for each conformation, and crest_ensemble.xyz is the coordinate file. These two files can be merged into a single SDF file using a script:</p>
+```bash
+crest_xyz_energy_merge.py --xyz crest_ensemble.xyz --energy crest.energies --sdf crest_ensemble.sdf
+```
+<p>The newly generated SDF conformation ensemble file (crest_ensemble.sdf) contains two tags: Energy and Relative_energy, both calculated based on Orb V3.</p>
+
 ## Reference
 <ol>
     <li>Rhodes, B. et al. (2025) “Orb-v3: atomistic simulation at scale.” Available at: http://arxiv.org/abs/2504.06231.</li>

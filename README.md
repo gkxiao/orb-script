@@ -60,6 +60,21 @@ python scan.py \
 
 <p>It should be noted that, at certain dihedral angles, the constraint may fail to maintain the target dihedral angle during geometry optimization (for example, when the molecular structure is "stretched" too severely, leading to numerical instability), causing an exception to be raised and interrupting the entire scan. As a result, the geometry optimization for that dihedral angle fails to converge and does not appear in the final output.</p>
 
+<p>可以用pandas进行可视化分析：</p>
+
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("scan_energies.csv")
+plt.plot(df.dihedral_angle_deg, df.relative_energy_kcal_mol, 'o-')
+plt.xlabel("Dihedral Angle (°)")
+plt.ylabel("Relative Energy (kcal/mol)")
+plt.grid(True)
+plt.savefig("scan_plot.png", dpi=300)
+plt.show()
+```
+
 ## Reference
 <ol>
     <li>Rhodes, B. et al. (2025) “Orb-v3: atomistic simulation at scale.” Available at: http://arxiv.org/abs/2504.06231.</li>

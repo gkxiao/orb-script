@@ -14,7 +14,7 @@ The scripts are built upon the Orb-V3 force field model.
 <li>lig_xtal.xyz:  dihedral angle 2-3-4-12 = -73.8°</li>
 </ul>
 
-## Tutorial
+## Tutorial for Optimization
 ➤ regular optimization：
 ```bash
 python opt.py --input_file lig_twisted.xyz --output_file opt.xyz --charge 0 --spin 1

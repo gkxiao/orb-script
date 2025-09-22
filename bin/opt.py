@@ -22,7 +22,7 @@ Usage:
     # Constrain to specific angle:
     python opt_v0.14.py --input_file input.xyz --output_file output.xyz --charge 0.0 --spin 1.0 --dihedral_indices 2 3 4 12 --dihedral_angle -90.0
 
-Author: Your Name or Research Group
+Author: Gaokeng Xiao, Guangzhou Molcalx Ltd.
 Date: 2025-04-05
 """
 

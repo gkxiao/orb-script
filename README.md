@@ -17,15 +17,15 @@ The scripts are built upon the Orb-V3 force field model.
 ## Tutorial
 ➤ regular optimization：
 ```bash
-python opt.py --input_file lig_twisted.xyz --output_file opted.xyz --charge 0 --spin 1
+python opt.py --input_file lig_twisted.xyz --output_file opt.xyz --charge 0 --spin 1
 ```
 ➤ Optimization with specific dihedral angles frozen
 ```bash
-python opt.py --input_file lig_twisted.xyz --output_file opted.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12
+python opt.py --input_file opt.xyz --output_file opt_frozen.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12
 ```
 ➤ Optimization with specific dihedral angle constraints, such as -90 degrees
 ```bash
-python opt_v0.14.py --input_file lig.xyz --output_file opt_-90.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12 --dihedral_angle -90
+python opt.py --input_file lig_twisted.xyz --output_file opt_-90.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12 --dihedral_angle -90
 ```
 ## Reference
 <ol>

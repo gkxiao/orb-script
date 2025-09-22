@@ -27,6 +27,12 @@ python opt.py --input_file opt.xyz --output_file opt_frozen.xyz --charge 0 --spi
 ```bash
 python opt.py --input_file lig_twisted.xyz --output_file opt_-90.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12 --dihedral_angle -90
 ```
+## Cluster tutorial
+➤ Geometric optimization of the conformational ensemble was performed using Orb V3, followed by clustering with CREST (V3.01) using energy windows = 10 kcal/mol and RMSD threshold = 0.125 Å to remove duplicate conformations.
+```bash
+cluster.py confs.sdf --charge 0
+```where the parameter charge refers to the net formal charge of the molecule
+where the parameter charge refers to the net formal charge of the molecule.
 ## Reference
 <ol>
     <li>Rhodes, B. et al. (2025) “Orb-v3: atomistic simulation at scale.” Available at: http://arxiv.org/abs/2504.06231.</li>

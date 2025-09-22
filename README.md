@@ -60,18 +60,26 @@ python scan.py \
 
 <p>It should be noted that, at certain dihedral angles, the constraint may fail to maintain the target dihedral angle during geometry optimization (for example, when the molecular structure is "stretched" too severely, leading to numerical instability), causing an exception to be raised and interrupting the entire scan. As a result, the geometry optimization for that dihedral angle fails to converge and does not appear in the final output.</p>
 
-<p>可以用pandas进行可视化分析：</p>
+<p>Visualization analysis can be performed using pandas:</p>
 
 ```
 import pandas as pd
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("scan_energies.csv")
-plt.plot(df.dihedral_angle_deg, df.relative_energy_kcal_mol, 'o-')
-plt.xlabel("Dihedral Angle (°)")
-plt.ylabel("Relative Energy (kcal/mol)")
-plt.grid(True)
-plt.savefig("scan_plot.png", dpi=300)
+df_clean = df[df['converged'] & df['energy_eV'].notna()]
+
+plt.figure(figsize=(10, 6))
+plt.plot(df_clean.dihedral_angle_deg, df_clean.relative_energy_kcal_mol, 'o-', linewidth=2, markersize=6)
+plt.xlabel("Dihedral Angle (°)", fontsize=14)
+plt.ylabel("Relative Energy (kcal/mol)", fontsize=14)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.title("Dihedral Scan with ORB-Mol", fontsize=16)
+plt.axhline(0, color='gray', linestyle='--', alpha=0.7)
+plt.xlim(-180, 180)
+plt.xticks(range(-180, 181, 30))
+plt.tight_layout()
+plt.savefig("dihedral_scan.png", dpi=300)
 plt.show()
 ```
 

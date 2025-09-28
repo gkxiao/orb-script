@@ -27,6 +27,13 @@ python opt.py --input_file opt.xyz --output_file opt_frozen.xyz --charge 0 --spi
 ```bash
 python opt.py --input_file lig_twisted.xyz --output_file opt_-90.xyz --charge 0 --spin 1 --dihedral_indices 2 3 4 12 --dihedral_angle -90
 ```
+
+## Case study: Geometry optimization and torsion profiling based on the Orb V3 Neural Network Potential: method evaluation and application expansion
+
+<img src="http://blog.molcalx.com.cn/wp-content/uploads/2025/09/model-1-torsion-profiling-rev1.png" style="width:450px; height:313px;">
+<p style="text-align:center;">Figure 2. The torsion profiling of Model-1 at four different theory levels</p>
+
+
 <!--
 ## Cluster tutorial
 ➤ Geometric optimization of the conformational ensemble was performed using Orb V3, followed by clustering with [CREST (V3.01)](https://github.com/crest-lab/crest)

@@ -32,7 +32,7 @@ python opt.py --input_file lig_twisted.xyz --output_file opt_-90.xyz --charge 0 
 
 <img src="http://blog.molcalx.com.cn/wp-content/uploads/2025/09/model-1-torsion-profiling-rev1.png" style="width:450px; height:313px;">
 <p style="text-align:center;">Figure 2. The torsion profiling of Model-1 at four different theory levels</p>
-<p>For detailed information, please read the [post](http://blog.molcalx.com.cn/2025/09/28/molecular-conformation-optimization-and-torsional-energy-analysis-based-on-the-orb-v3-neural-network-potential-method.html)</p>
+<p>For detailed information, please read the <a href="http://blog.molcalx.com.cn/2025/09/28/molecular-conformation-optimization-and-torsional-energy-analysis-based-on-the-orb-v3-neural-network-potential-method.html">blog post</a>.</p>
 
 <!--
 ## Cluster tutorial
